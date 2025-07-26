@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Trace Form";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:#F3E9E3;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        input[type="submit"] {
+            background-color: #cc00ff;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #daaee8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Trace</p>
+    </header>
+    <div>
+        <form method="post" asp-action="SubmitTrace">
+            <label for="traceId">
+                Trace ID
+                <input type="text" id="traceId" name="traceId" />
+            </label>
+            <label for="sampleTime">
+                Sample Time
+                <input type="text" id="sampleTime" name="sampleTime" />
+            </label>
+            <label for="totalSamples">
+                Total no. of Samples
+                <input type="text" id="totalSamples" name="totalSamples" />
+            </label>
+            <label for="groupSize">
+                Group Size
+                <input type="text" id="groupSize" name="groupSize" />
+            </label>
+            <label for="svids">
+                SVIDs
+                <input type="text" id="svids" name="svids" />
+            </label>
+            <label for="submit">
+                <input type="submit" id="submit" value="Send" />
+            </label>
+        </form>
+    </div>
+</body>
+</html>
